@@ -342,15 +342,20 @@ export default function SlugPage({ params }: Props) {
                 )}
 
                 <a
-                  href="https://momo.vn"
+                  href="https://momo.vn/vi-tra-sau"
                   target="_blank"
                   rel="noopener"
-                  className="flex items-center justify-center gap-2 bg-white text-momo font-bold py-3 rounded-xl text-sm hover:bg-gray-50 transition-colors shadow-lg"
+                  className="block bg-white text-momo rounded-xl shadow-lg overflow-hidden hover:bg-gray-50 transition-colors"
                 >
-                  Kích hoạt Ví Trả Sau ngay
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  <div className="flex items-center justify-center gap-2 py-3 font-bold text-sm border-b border-momo/10">
+                    Kích hoạt Ví Trả Sau — miễn phí
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                  <p className="text-center text-[10px] text-momo/60 py-1.5 font-medium">
+                    Sẽ mở MoMo app · Chỉ mất 2 phút · Không tự động tính phí
+                  </p>
                 </a>
               </div>
             </div>
