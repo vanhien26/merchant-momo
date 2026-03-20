@@ -54,8 +54,8 @@ const BENEFITS = [
     ),
     iconBg: 'bg-green-50',
     title: 'Cashback',
-    subtitle: 'Hoàn tiền vào ví ngay',
-    desc: 'Hoàn tiền lên đến 50% cho mỗi giao dịch — tiền về ví trong vòng 24 giờ.',
+    subtitle: 'Hoàn tiền vào ví MoMo',
+    desc: 'Nhận cashback khi thanh toán tại các đối tác — tiền hoàn về ví MoMo sau giao dịch.',
   },
   {
     icon: (
@@ -72,7 +72,6 @@ const BENEFITS = [
 
 export default function DoiTacPage() {
   const featured = getFeaturedPartners()
-  const totalDeals = featured.filter(p => p.deal).length
 
   return (
     <main className="min-h-screen bg-white">
@@ -93,12 +92,6 @@ export default function DoiTacPage() {
         <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-rose-200/25 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          {/* Pill badge */}
-          <div className="inline-flex items-center gap-1.5 bg-white/80 border border-momo/20 text-momo text-xs font-semibold px-3 py-1.5 rounded-full mb-6 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-momo animate-pulse" />
-            🔥 {totalDeals}+ ưu đãi đang hoạt động hôm nay
-          </div>
-
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
             Khám phá đối tác{' '}
             <span className="text-momo">ưu đãi cùng MoMo</span>
@@ -151,19 +144,16 @@ export default function DoiTacPage() {
             </a>
           </div>
 
-          {/* Stats — 3 cột rõ, không truncate */}
-          <div className="grid grid-cols-3 gap-0 max-w-sm mx-auto">
-            <div className="text-center px-4">
+          {/* Stats — 2 cột, chỉ số đã verified */}
+          <div className="flex items-center justify-center gap-0 max-w-xs mx-auto">
+            <div className="text-center px-8">
               <p className="text-2xl font-extrabold text-gray-900">50.000+</p>
-              <p className="text-xs text-gray-500 mt-0.5">đối tác</p>
+              <p className="text-xs text-gray-500 mt-0.5">đối tác toàn quốc</p>
             </div>
-            <div className="text-center px-4 border-x border-gray-200">
-              <p className="text-2xl font-extrabold text-gray-900">5 triệu+</p>
-              <p className="text-xs text-gray-500 mt-0.5">giao dịch/tháng</p>
-            </div>
-            <div className="text-center px-4">
-              <p className="text-2xl font-extrabold text-momo">50%</p>
-              <p className="text-xs text-gray-500 mt-0.5">hoàn tiền tối đa</p>
+            <div className="w-px h-8 bg-gray-200" />
+            <div className="text-center px-8">
+              <p className="text-2xl font-extrabold text-gray-900">50M+</p>
+              <p className="text-xs text-gray-500 mt-0.5">người dùng MoMo</p>
             </div>
           </div>
         </div>

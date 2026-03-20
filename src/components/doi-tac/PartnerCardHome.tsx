@@ -23,24 +23,14 @@ const CATEGORY_NAMES: Record<string, string> = {
 }
 
 export default function PartnerCardHome({ partner }: { partner: Partner }) {
-  const cat      = CATEGORY_STYLES[partner.category] ?? { bg: 'bg-gray-100', text: 'text-gray-600', dot: 'bg-gray-400' }
-  const catName  = CATEGORY_NAMES[partner.category]  ?? partner.category
-  const isHotDeal = partner.deal === 'Hot Deal'
+  const cat     = CATEGORY_STYLES[partner.category] ?? { bg: 'bg-gray-100', text: 'text-gray-600', dot: 'bg-gray-400' }
+  const catName = CATEGORY_NAMES[partner.category]  ?? partner.category
 
   return (
     <Link
       href={`/doi-tac/${partner.slug}`}
       className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden flex flex-col items-center text-center"
     >
-      {/* Deal badge — absolute top-right */}
-      {partner.deal && (
-        <span className={`absolute top-3 right-3 z-10 text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm ${
-          isHotDeal ? 'bg-red-500 text-white' : 'bg-green-500 text-white'
-        }`}>
-          {partner.deal}
-        </span>
-      )}
-
       {/* Logo area */}
       <div className="w-full flex items-center justify-center pt-6 pb-3 px-5">
         <div className="w-16 h-16 rounded-2xl shadow-sm overflow-hidden bg-white border border-gray-100 flex-shrink-0">
@@ -65,20 +55,11 @@ export default function PartnerCardHome({ partner }: { partner: Partner }) {
         </span>
       </div>
 
-      {/* CTA button — contextual theo deal */}
+      {/* CTA */}
       <div className="w-full px-4 pt-3 pb-4">
-        {partner.deal ? (
-          <span className="flex items-center justify-center gap-1 w-full h-8 rounded-xl bg-momo text-white text-xs font-bold group-hover:bg-momo-dark transition-colors shadow-sm shadow-momo/20">
-            {partner.deal}
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </span>
-        ) : (
-          <span className="flex items-center justify-center w-full h-8 rounded-xl border border-gray-200 text-gray-500 text-xs font-medium group-hover:border-momo group-hover:text-momo transition-colors">
-            Xem chi tiết
-          </span>
-        )}
+        <span className="flex items-center justify-center w-full h-8 rounded-xl border border-gray-200 text-gray-500 text-xs font-medium group-hover:border-momo group-hover:text-momo transition-colors">
+          Xem chi tiết
+        </span>
       </div>
     </Link>
   )
