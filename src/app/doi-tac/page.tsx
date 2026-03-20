@@ -6,6 +6,7 @@ import PartnerCardHome from '@/components/doi-tac/PartnerCardHome'
 import CategoryCard from '@/components/doi-tac/CategoryCard'
 import FaqAccordion from '@/components/FaqAccordion'
 import SearchBar from '@/components/doi-tac/SearchBar'
+import HomeLongContent from '@/components/doi-tac/HomeLongContent'
 
 export const metadata: Metadata = {
   title: 'Đối Tác MoMo — Khám phá hàng ngàn thương hiệu ưu đãi',
@@ -278,6 +279,9 @@ export default function DoiTacPage() {
           <FaqAccordion />
         </div>
       </section>
+
+      {/* ── Long Content — SEO/GEO ────────────────────────────────────── */}
+      <HomeLongContent />
 
     </main>
   )

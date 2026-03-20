@@ -12,6 +12,7 @@ import PartnerLogo from '@/components/doi-tac/PartnerLogo'
 import BrandActions from '@/components/doi-tac/BrandActions'
 import PartnerFaqAccordion from '@/components/doi-tac/PartnerFaqAccordion'
 import VoucherCard from '@/components/doi-tac/VoucherCard'
+import CategoryLongContent from '@/components/doi-tac/CategoryLongContent'
 
 interface Props {
   params: { slug: string }
@@ -117,6 +118,9 @@ export default function SlugPage({ params }: Props) {
         </div>
 
         <StickyCtaBanner />
+
+        {/* Long Content — SEO/GEO per category */}
+        <CategoryLongContent categorySlug={slug} categoryName={category.name} />
       </main>
     )
   }
